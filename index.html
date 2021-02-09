@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.2.0/mdb.min.css" rel="stylesheet" />
+  
+    <title>Password Generator</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">Password Generator</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="my-5">
+            <button type="button" type="button" class="btn btn-primary" data-mdb-toggle="modal"
+                data-mdb-target="#generatePasswordModal">
+                Generate Password
+            </button>
+        </div>
+
+
+        <!-- Password Result -->
+        <div class="col-6">
+            <label class="form-label" for="PasswordResult">Password Result:</label>
+            <div class="form-outline">
+                <textarea class="form-control" id="PasswordResult" rows="4"></textarea>
+            </div>
+        </div>
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="generatePasswordModal" tabindex="-1" aria-labelledby="generatePasswordModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="generatePasswordModalLabel">Generate Password</h5>
+                        <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <label class="form-label" for="PasswordRange">Password Length</label>
+                            <div class="range">
+                                <input type="range" class="form-range" value="8" min="8" max="128" id="PasswordRange" />
+                            </div>
+                        </div>
+                        <div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="LowerCase" />
+                                <label class="form-check-label" for="LowerCase">
+                                    Lower Case
+                                </label>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="UpperCase" />
+                                <label class="form-check-label" for="UpperCase">
+                                    Upper Case
+                                </label>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="Numeric" />
+                                <label class="form-check-label" for="Numeric">
+                                    Numeric
+                                </label>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="SpecialCharacter" />
+                                <label class="form-check-label" for="SpecialCharacter">
+                                    Special Character <span class="fw-lighter mx-5">Included: ~!@#$%^&*</span>
+                                </label>
+                            </div>
+                        </div>
+<div>
+    <p id="errorMsg" class="text-danger mt-2 text-center"></p>
+</div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">
+                            Close
+                        </button>
+                        <button type="button" id="generateBtn" onclick="generatePassword()" class="btn btn-primary">Generate</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="generatePassword.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.2.0/mdb.min.js"></script>
+</body>
+
+</html>
